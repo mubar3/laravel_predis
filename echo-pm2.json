@@ -1,0 +1,5 @@
+{
+  "name": "echo",
+  "script": "npx laravel-echo-server start",
+  "args": "start"
+}
