@@ -21,7 +21,18 @@ ss -an | grep 6379 (check remote acces)
 sudo ufw allow proto tcp from 192.168.121.0/24 to any port 6379 (setting firewell)
 redis-cli -h <REDIS_IP_ADDRESS> ping (for check redi server)
 sudo systemctl restart redis-server
+
+to start and stop when error
+/etc/init.d/redis-server stop
+/etc/init.d/redis-server start
 ```
+
+setting host redis server in laravel
+```
+open env, change redist host (if isset pass, just fill it)
+open laravel-echo-server.json, change host (if isset pass, just fill it)
+```
+
 
 to run echo server
 ```
