@@ -84,3 +84,28 @@ make new broadcast
 ```
 
 
+# install echo server (when wnat to make new blank project laravel) #
+
+```
+change config/database.php : in redis change " 'client' => env('REDIS_CLIENT', 'phpredis'), " to " 'client' => env('REDIS_CLIENT', 'predis'), "
+npm install -g laravel-echo-server
+laravel-echo-server init (and setting with what you need)
+add host in laravel-echo-server.json same with this repository
+
+npm install
+npm install laravel-echo
+npm install socket.io-client
+
+create file resources/assets/js/laravel-echo-setup.js with code :
+    import Echo from 'laravel-echo';
+    
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: window.location.hostname + ":" + window.laravel_echo_port
+    });
+
+add code in webpack.mix.js :
+    mix.js('resources/assets/js/laravel-echo-setup.js', 'public/js');
+
+npm run dev 
+```
