@@ -60,7 +60,7 @@ http://127.0.0.1:8000/t (for send notification)
 
 make new broadcast
 ```
-1.php artisan create:event <nameevent>
+1.php artisan make:event <nameevent>
 
 2.write 'use App\Events\<nameevent>;' in top controller
 
@@ -87,6 +87,7 @@ make new broadcast
 # install echo server (when wnat to make new blank project laravel) #
 
 ```
+composer require predis/predis
 change config/database.php : in redis change " 'client' => env('REDIS_CLIENT', 'phpredis'), " to " 'client' => env('REDIS_CLIENT', 'predis'), "
 npm install -g laravel-echo-server
 laravel-echo-server init (and setting with what you need)
