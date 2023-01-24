@@ -110,3 +110,12 @@ add code in webpack.mix.js :
 
 npm run dev 
 ```
+
+if have eror when compile
+```
+rm -rf node_modules
+rm package-lock.json yarn.lock
+npm cache clear --force
+npm install
+npm run dev
+```
