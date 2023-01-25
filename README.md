@@ -12,6 +12,7 @@
 ## how to install
 install nodejs, 
 setting redist host in env, if local can use 127.0.0.1
+setting LARAVEL_ECHO_HOST in env, if local can use 127.0.0.1
 
 install redist in server
 ```
@@ -30,7 +31,8 @@ to start and stop when error
 setting host redis server in laravel
 ```
 open env, change redist host (if isset pass, just fill it)
-open laravel-echo-server.json, change host (if isset pass, just fill it)
+open laravel-echo-server.json, change databaseConfig -> host (if isset pass, just fill it) (HOST REDIST)
+open laravel-echo-server.json, change host (if isset pass, just fill it) (HOST PROJECT)
 ```
 
 
@@ -73,7 +75,7 @@ make new broadcast
     <script>
             window.laravel_echo_port='{{env("LARAVEL_ECHO_PORT")}}';
     </script>
-    <script src="//{{ Request::getHost() }}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
+    <script src="//{{ env("LARAVEL_ECHO_HOST") }}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
     <script src="{{ url('/js/laravel-echo-setup.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">

@@ -5,14 +5,14 @@
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {
-			"host": "192.168.0.125"
+			"host": "192.168.100.100"
 		},
 		"sqlite": {
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
 	"devMode": true,
-	"host": null,
+	"host": "127.0.0.1",
 	"port": "6001",
 	"protocol": "http",
 	"socketio": {},
