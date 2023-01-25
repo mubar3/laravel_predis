@@ -41,6 +41,7 @@ laravel-echo-server start
 
 if you want run echo server in backround but just can use in linux, can use
 ```
+sudo npm i -g pm2
 sudo pm2 start echo-pm2.json
 ```
 
