@@ -36,6 +36,7 @@ open laravel-echo-server.json, change host (if isset pass, just fill it)
 
 to run echo server
 ```
+npx laravel-echo-server start
 laravel-echo-server start
 ```
 
