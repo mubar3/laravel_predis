@@ -19,8 +19,13 @@ class Controller extends BaseController
         // $command = "cd .. && git status";
         $repoPath = '/var/www/html/laravel_predis';
         $gitPath = '/usr/bin/git'; // Replace this with the correct path to your git executable
-        // $command = "cd $repoPath && $gitPath pull";
-        $command = "cd $repoPath && git pull";
+
+        
+        // Enable error reporting for troubleshooting
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+
+        $command = "cd $repoPath && $gitPath pull";
         $output = array();
         $returnValue = null;
         
