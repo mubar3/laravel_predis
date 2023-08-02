@@ -25,7 +25,8 @@ class Controller extends BaseController
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        $command = "cd $repoPath && $gitPath pull";
+        // $command = "cd $repoPath && $gitPath pull";
+        $command = "cd $repoPath && cd";
         $output = array();
         $returnValue = null;
         
