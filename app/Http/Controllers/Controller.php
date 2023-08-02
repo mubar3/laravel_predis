@@ -13,31 +13,34 @@ class Controller extends BaseController
 
     public function git_pull()  
     {
-        $command = "cd .. && $(which git) pull";
+        // $command = "cd .. && $(which git) pull";
         // $command = "cd .. && where git pull";
         // $command = "cd .. && git pull";
         // $command = "cd .. && git status";
+        $repoPath = '/var/www/html/laravel_predis';
+        $gitPath = '/usr/bin/git'; // Replace this with the correct path to your git executable
+        $command = "cd $repoPath && $gitPath pull";
         $output = array();
         $returnValue = null;
         
-        // shell_exec($command, $output, $returnValue);
-        
-        // if ($returnValue === 0) {
-        //     // Command executed successfully
-        //     foreach ($output as $line) {
-        //         echo $line . "<br>";
-        //     }
-        // } else {
-        //     // Command execution failed
-        //     echo "Command failed with error code: " . $returnValue;
-        // }
+        exec($command, $output, $returnValue);
+
+        if ($returnValue === 0) {
+            // Command executed successfully
+            foreach ($output as $line) {
+                echo $line . "<br>";
+            }
+        } else {
+            // Command execution failed
+            echo "Command failed with error code: " . $returnValue;
+        }
 
         
-        $output=shell_exec($command);
-        if ($output !== null) {
-            echo "Current working directory: " . $output;
-        } else {
-            echo "Command execution failed.";
-        }
+        // $output=shell_exec($command);
+        // if ($output !== null) {
+        //     echo "Current working directory: " . $output;
+        // } else {
+        //     echo "Command execution failed.";
+        // }
     }
 }
