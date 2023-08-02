@@ -13,22 +13,31 @@ class Controller extends BaseController
 
     public function git_pull()  
     {
-        // $command = "cd .. && $(which git) pull";
+        $command = "cd .. && $(which git) pull";
         // $command = "cd .. && where git pull";
-        $command = "cd .. && git pull";
+        // $command = "cd .. && git pull";
+        // $command = "cd .. && git status";
         $output = array();
         $returnValue = null;
         
-        exec($command, $output, $returnValue);
+        // shell_exec($command, $output, $returnValue);
         
-        if ($returnValue === 0) {
-            // Command executed successfully
-            foreach ($output as $line) {
-                echo $line . "<br>";
-            }
+        // if ($returnValue === 0) {
+        //     // Command executed successfully
+        //     foreach ($output as $line) {
+        //         echo $line . "<br>";
+        //     }
+        // } else {
+        //     // Command execution failed
+        //     echo "Command failed with error code: " . $returnValue;
+        // }
+
+        
+        $output=shell_exec($command);
+        if ($output !== null) {
+            echo "Current working directory: " . $output;
         } else {
-            // Command execution failed
-            echo "Command failed with error code: " . $returnValue;
+            echo "Command execution failed.";
         }
     }
 }
