@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             {{-- <iframe width="100%" height="500" src="https://maps.google.com/maps?q=-7.3571457,112.7509540&output=embed"></iframe> --}}
-            <h1>Laravel Broadcast Redis Socket io Tutorial - mbshop.tech1</h1>
+            <h1>Laravel Broadcast Redis Socket io Tutorial - mbshop.tech12</h1>
             
             <div id="notification"></div>
         </div>
